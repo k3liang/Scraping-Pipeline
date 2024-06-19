@@ -1,11 +1,11 @@
-# Scrapy Pipeline Project
+# Scraping Pipeline Project
 
 ## Setup Instructions
 
 1. **Clone the Repository:**
     ```sh
     git clone <repository_url>
-    cd myproject
+    cd Scraping-Pipeline/
     ```
 
 2. **Create a folder called data with your json files:**
