@@ -4,7 +4,7 @@
 
 1. **Clone the Repository:**
     ```sh
-    git clone <repository_url>
+    git clone https://github.com/k3liang/Scraping-Pipeline
     cd Scraping-Pipeline/
     ```
 
