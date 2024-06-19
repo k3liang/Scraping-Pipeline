@@ -1,0 +1,5 @@
+scrapy==2.11.2
+psycopg2==2.9.9
+pymongo==4.7.3
+redis==5.0.6
+pandas==2.2.2

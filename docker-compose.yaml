@@ -1,0 +1,46 @@
+services:
+  scrapy:
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - ./jobs_project:/app/jobs_project
+      - ./data:/app/data
+    depends_on:
+      - postgres 
+      - mongodb 
+      - redis  
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: scrapydb
+      POSTGRES_USER: scrapyuser
+      POSTGRES_PASSWORD: scrapypassword
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Persist PostgreSQL data
+    ports:
+      - "5432:5432"
+
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - mongodb_data:/data/db  # Persist MongoDB data
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    
+
+  redis:
+    image: redis:latest
+    volumes:
+      - redis_data:/data  # Persist Redis data
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdata:
+  mongodb_data:
+  redis_data:
